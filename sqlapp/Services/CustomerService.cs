@@ -24,29 +24,29 @@ namespace sqlapp
         public List<Customers> GetCustomers()
         {
             List<Customers> _product_lst = new List<Customers>();
-            string _statement = "SELECT ID, NAME, ADDRESS, SALARY FROM CUSTOMERS";
-            SqlConnection _connection = GetConnection();
+            //string _statement = "SELECT ID, NAME, ADDRESS, SALARY FROM CUSTOMERS";
+            //SqlConnection _connection = GetConnection();
 
-            _connection.Open();
+            //_connection.Open();
 
-            SqlCommand _sqlcommand = new SqlCommand(_statement, _connection);
+            //SqlCommand _sqlcommand = new SqlCommand(_statement, _connection);
 
-            using (SqlDataReader _reader = _sqlcommand.ExecuteReader())
-            {
-                while (_reader.Read())
-                {
-                    Customers _customer = new Customers()
-                    {
-                        id = _reader.GetInt32(0),
-                        name = _reader.GetString(1),
-                        address = _reader.GetString(2),
-                        salary = _reader.GetString(2)
-                    };
+            //using (SqlDataReader _reader = _sqlcommand.ExecuteReader())
+            //{
+            //    while (_reader.Read())
+            //    {
+            //        Customers _customer = new Customers()
+            //        {
+            //            id = _reader.GetInt32(0),
+            //            name = _reader.GetString(1),
+            //            address = _reader.GetString(2),
+            //            salary = _reader.GetString(2)
+            //        };
 
-                    _product_lst.Add(_customer);
-                }
-            }
-            _connection.Close();
+            //        _product_lst.Add(_customer);
+            //    }
+            //}
+            //_connection.Close();
             return _product_lst;
         }
     }
